@@ -5,18 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/layouts.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-  <div id="app">
-  <!-- ナビゲーションバー -->
-    <nav>
-      <div class="container">
-      <!-- サイトロゴ -->
+<header>
+    <!-- サイトロゴ -->
+    <a href="">BookTree</a>  
+      <nav>
+        <a href="">みんなの投稿</a>
+        <a href="">Mylibrary</a>
+      </nav>
+    <a href="">ログアウト</a>
+  </header>
 
-      </div>
-    </nav>
-  </div>
+  @yield('content')
   
+
+
+
+  <footer>
+    <p><small>Powerd by Atsuko Tanaka</small></p>
+  </footer>  
 </body>
 </html>

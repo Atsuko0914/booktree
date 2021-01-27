@@ -5,27 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/top.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/new.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
 <header>
     <!-- サイトロゴ -->
     <a href="">BookTree</a>  
-      <nav>
-        <a href="">新規登録</a>
-        <a href="">ゲストログイン</a>
-      </nav>
-  </header>
-  <div id="home" class="main_img">
-    <div class="top_message">
-      <p>読者家のためのコミュニティーサイト<span>"BookTree"</span></p>
-      <p>あなただけの<span>MyLibrary</span>を利用して</p>
-      <p>よりよい<span>読書LIFEを。。。</span></p>
-    </div>
-    <div class="top_login">
-      <h1>BookTreeにログイン</h1>
+</header>
+  <div id="home">
+    <div class="new_login">
+      <h1>新規登録</h1>
       <form>
+        <div class="form_item">
+          <label for="name"></label>
+          <input type="name" name="name" placeholder="name"></input>
+        </div>
         <div class="form_item">
           <label for="email"></label>
           <input type="email" name="email" placeholder="Email Address"></input>
@@ -35,13 +30,19 @@
           <input type="password" name="password"
           placeholder="Password"></input>
         </div>
+        <div class="form_item">
+          <label for="password_comform"></label>
+          <input type="password" name="password_comform"
+          placeholder="Password(確認)"></input>
+        </div>
+        <div class="form_file">
+          <label for="user_image_pass">picture</label>
+          <input type="file" name="user_image_pass"></input>
+        </div>
         <div class="button_panel">
           <input type="submit" class="button" title="Sign In" value="ログイン"></input>
         </div>
       </form>
-        <div class="form_footer">
-          <p><a href="#">パスワードをお忘れの方</a></p>
-        </div>
     </div>
       
     

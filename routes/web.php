@@ -13,6 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// "/"のルーティング
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
+
+Route::get('/layouts', function () {
+    return view('layouts.app');
+});
+
+Route::get('/new', function () {
+    return view('new');
+});
+
+Route::get('/index', function () {
+    return view('admin.post.index');
+});
+
+
