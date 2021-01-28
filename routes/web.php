@@ -37,4 +37,7 @@ Route::get('/show', function () {
     return view('admin.comment.show');
 });
 
+Route::get('/mylibrary', function () {
+    return view('book.index');
+});
 
