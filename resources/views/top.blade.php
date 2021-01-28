@@ -10,8 +10,9 @@
 </head>
 <body>
 <header>
-    <!-- サイトロゴ -->
-    <a href="">BookTree</a>  
+<!-- サイトロゴ -->
+    <a href="">BookTree</a> 
+<!-- ナビゲーション -->
       <nav>
         <a href="">新規登録</a>
         <a href="">ゲストログイン</a>

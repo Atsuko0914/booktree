@@ -33,4 +33,8 @@ Route::get('/index', function () {
     return view('admin.post.index');
 });
 
+Route::get('/show', function () {
+    return view('admin.comment.show');
+});
+
 

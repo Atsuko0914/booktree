@@ -9,11 +9,13 @@
   <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
+<!-- サイトロゴ -->
 <header>
-    <!-- サイトロゴ -->
     <a href="">BookTree</a>  
 </header>
+<!-- ホーム画像 -->
   <div id="home">
+<!-- 新規登録 -->
     <div class="new_login">
       <h1>新規登録</h1>
       <form>
@@ -40,7 +42,7 @@
           <input type="file" name="user_image_pass"></input>
         </div>
         <div class="button_panel">
-          <input type="submit" class="button" title="Sign In" value="ログイン"></input>
+          <input type="submit" class="button" value="ログイン"></input>
         </div>
       </form>
     </div>
