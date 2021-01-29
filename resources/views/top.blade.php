@@ -37,7 +37,7 @@
           placeholder="Password"></input>
         </div>
         <div class="button_panel">
-          <input type="submit" class="button" title="Sign In" value="ログイン"></input>
+          <input type="submit" class="button" value="ログイン"></input>
         </div>
       </form>
         <div class="form_footer">
@@ -47,9 +47,6 @@
       
     
   </div>
-  
-  
-
 
 
   <footer>

@@ -11,12 +11,12 @@
 <body>
 <header>
     <!-- サイトロゴ -->
-    <a href="">BookTree</a>  
+    <a href="/">BookTree</a>  
       <nav>
-        <a href="">みんなの投稿</a>
-        <a href="">Mylibrary</a>
+        <a href="/admin/post">みんなの投稿</a>
+        <a href="/book">Mylibrary</a>
       </nav>
-    <a href="">ログアウト</a>
+    <a href="/">ログアウト</a>
   </header>
 
   @yield('content')

@@ -29,7 +29,7 @@ Route::get('/new', function () {
     return view('new');
 });
 
-Route::get('/index', function () {
+Route::get('/admin/post', function () {
     return view('admin.post.index');
 });
 
@@ -37,7 +37,11 @@ Route::get('/show', function () {
     return view('admin.comment.show');
 });
 
-Route::get('/mylibrary', function () {
+Route::get('/book', function () {
     return view('book.index');
+});
+
+Route::get('/book/record', function () {
+    return view('book.record');
 });
 

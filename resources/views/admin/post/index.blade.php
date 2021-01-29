@@ -21,6 +21,7 @@
     </form>
   </div>
 </div>
+<!-- モーダル  -->
 <div class="modal js-modal">
   <div class="modal_bg js-modal-close"></div>
   <div class="modal_content">

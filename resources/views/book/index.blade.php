@@ -11,9 +11,9 @@
   <div class="mylibrary_main">
     <p class="my_library">MyLibrary</p>
     <!-- 新しい本ボタン -->
-    <a class="js-modal-open" href="">＋新しい本</a>
+    <a class="js-modal-open" href="/book/record">＋新しい本</a>
   </div>
-    <!-- My検索 -->
+  <!-- My検索 -->
   <div class="new_book">
     <form action="">
       <label for="my_serch">My検索</label>
