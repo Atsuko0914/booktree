@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +19,13 @@ use Illuminate\Support\Facades\Route;
 // });
 // "/"のルーティング
 Route::get('/', function () {
-    return view('top');
+    return view('auth.login');
 });
 
 Route::get('/layouts', function () {
     return view('layouts.app');
 });
 
-Route::get('/new', function () {
-    return view('new');
-});
 
 Route::get('/admin/post', function () {
     return view('admin.post.index');
@@ -45,3 +43,4 @@ Route::get('/book/record', function () {
     return view('book.record');
 });
 
+Route::get('/auth/register',[RegisterController::class, 'getRegister']);

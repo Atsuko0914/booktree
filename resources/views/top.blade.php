@@ -24,7 +24,8 @@
       <p>あなただけの<span>MyLibrary</span>を利用して</p>
       <p>よりよい<span>読書LIFEを。。。</span></p>
     </div>
-    <div class="top_login">
+    @yield('login')
+    <!-- <div class="top_login">
       <h1>BookTreeにログイン</h1>
       <form>
         <div class="form_item">
@@ -43,7 +44,7 @@
         <div class="form_footer">
           <p><a href="#">パスワードをお忘れの方</a></p>
         </div>
-    </div>
+    </div> -->
       
     
   </div>

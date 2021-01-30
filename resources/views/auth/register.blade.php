@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>@yield('title')</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/new.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/register.css') }}" rel="stylesheet">
   <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
