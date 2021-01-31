@@ -26,7 +26,6 @@ Route::get('/layouts', function () {
     return view('layouts.app');
 });
 
-
 Route::get('/admin/post', function () {
     return view('admin.post.index');
 });
@@ -45,3 +44,4 @@ Route::get('/book/record', function () {
 
 
 Route::get('/auth/register',[RegisterController::class, 'getRegister']);
+Route::post('/auth/register',[RegisterController::class,'postRegister']);
