@@ -45,3 +45,5 @@ Route::get('/book/record', function () {
 
 
 Route::get('/auth/register',[RegisterController::class, 'getRegister']);
+
+Route::post('/auth/register',[RegisterController::class, 'postRegister']);

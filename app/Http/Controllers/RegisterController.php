@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\User;
 
 class RegisterController extends Controller
 {
@@ -10,17 +11,19 @@ class RegisterController extends Controller
         return view('auth.register');
     }
     public function postRegister(Request $request) {
-        $name = $request->name;
-        $email = $request->email;
-        $password = $request->password;
-        $user_image_pass = $request->user_image_pass;
 
-        $data =[
-            'name' => $name,
-            'email' => $email,
-            'password' => $password,
-            'user_image_pass' => $user_image_pass,
-         ];
-        return view('admin/post/index', $data);
+        // modelを新規作成
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;$user->password = $request->password;$user->user_image_pass = $request->user_image_pass;
+        $user->save();
+
+        // $data =[
+        //     'name' => $name,
+        //     'email' => $email,
+        //     'password' => $password,
+        //     'user_image_pass' => $user_image_pass,
+        //  ];
+        return view('admin/post/index');
         }
 }

@@ -18,7 +18,8 @@
 <!-- 新規登録 -->
     <div class="new_login">
       <h1>新規登録</h1>
-      <form>
+      <form action="/auth/register" method="POST">
+      @csrf
         <div class="form_item">
           <label for="name"></label>
           <input type="name" name="name" placeholder="name"></input>
@@ -42,7 +43,7 @@
           <input type="file" name="user_image_pass"></input>
         </div>
         <div class="button_panel">
-          <input type="submit" class="button" value="ログイン"></input>
+          <input type="submit" class="button" value="新規登録"></input>
         </div>
       </form>
     </div>
