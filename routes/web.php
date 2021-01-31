@@ -43,4 +43,5 @@ Route::get('/book/record', function () {
     return view('book.record');
 });
 
+
 Route::get('/auth/register',[RegisterController::class, 'getRegister']);
