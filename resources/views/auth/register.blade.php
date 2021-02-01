@@ -27,6 +27,7 @@
         <div class="form_item">
           <label for="email"></label>
           <input type="email" name="email" placeholder="Email Address"></input>
+          <p>{{$error}}</p>
         </div>
         <div class="form_item">
           <label for="password"></label>
