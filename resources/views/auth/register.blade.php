@@ -18,7 +18,7 @@
 <!-- 新規登録 -->
     <div class="new_login">
       <h1>新規登録</h1>
-      <form action="/auth/register" method="POST">
+      <form action="/auth/register" method="POST" enctype="multipart/form-data">
       @csrf
         <div class="form_item">
           <label for="name"></label>

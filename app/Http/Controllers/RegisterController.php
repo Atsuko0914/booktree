@@ -17,17 +17,26 @@ class RegisterController extends Controller
         {
         return view('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
         
-            } else {
+            } 
+        }
+
+        if ($file = $request->file('user_image_pass')) {
+            $fileName = time() . $file->getClientOriginalName();
+            $target_path = public_path('uploads/');
+            $file->move($target_path, $fileName);
+        } else {
+            $fileName = "";
+        }
+        
         // modelを新規作成
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;$user->user_image_pass = $request->user_image_pass;
+        $user->password = $request->password;$user->user_image_pass = $request->$fileName;
         $user->save();
 
         return view('admin/post/index');
-        }
-         }
+        
     }
 
         // $data =[
