@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -11,15 +12,14 @@ class RegisterController extends Controller
         return view('/auth/register', ['error' => '']);
     }
     public function postRegister(Request $request) {
+        // メールアドレスに重複がないか確認
         $emails = User::select('email')->get();
         foreach ($emails as $key => $email){
-        if ($email === $request->email)
-        {
+        if ($email === $request->email) {
         return view('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
-        
             } 
         }
-
+        // 画像をアップロード
         if ($file = $request->file('user_image_pass')) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
@@ -32,7 +32,8 @@ class RegisterController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;$user->user_image_pass = $request->$fileName;
+        $user->password = Hash::make($request->password);
+        $user->user_image_pass = $request->$fileName;
         $user->save();
 
         return view('admin/post/index');
