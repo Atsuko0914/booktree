@@ -13,12 +13,26 @@ class RegisterController extends Controller
     }
     public function postRegister(Request $request) {
         // メールアドレスに重複がないか確認
-        $emails = User::select('email')->get();
-        foreach ($emails as $key => $email){
-        if ($email === $request->email) {
-        return view('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
-            } 
-        }
+        if($this->User->where('email', '=', $request->input('email')->get())){
+         
+      return redirect('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
+        } else {
+
+        
+        // $emails = User::select('email')->get();
+        // foreach ($emails as $key => $email){
+        // if ($email === $request->email) {
+        // return view('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
+        //     } 
+        // }
+        // バリデーション
+        // $this->validate($request,[
+        //     'name' => 'required',
+        //     'email' => 'email|required|unique:users',
+        //     'password' => 'required|min:4',
+        //     'password_comform' => 'required|same:password'
+        //   ]);
+
         // 画像をアップロード
         if ($file = $request->file('user_image_pass')) {
             $fileName = time() . $file->getClientOriginalName();
@@ -36,8 +50,8 @@ class RegisterController extends Controller
         $user->user_image_pass = $request->$fileName;
         $user->save();
 
-        return view('admin/post/index');
-        
+        return redirect('admin/post/index');
+    }
     }
 
         // $data =[

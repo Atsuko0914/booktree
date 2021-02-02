@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ use App\Http\Controllers\RegisterController;
 //     return view('welcome');
 // });
 // "/"のルーティング
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [LoginController::class, 'getLogin']);
+
+Route::post('/',[LoginController::class, 'postRegister']);
+
 
 Route::get('/layouts', function () {
     return view('layouts.app');

@@ -20,20 +20,36 @@
       <h1>新規登録</h1>
       <form action="/auth/register" method="POST" enctype="multipart/form-data">
       @csrf
+      @error('name')
+        <tr><th>ERROR</th>
+        <td>{{$message}}</td></tr>
+      @enderror
         <div class="form_item">
           <label for="name"></label>
-          <input type="name" name="name" placeholder="name"></input>
+          <input type="name" name="name" placeholder="name" value="{{old('name')}}"></input>
         </div>
+      @error('email')
+        <tr><th>ERROR</th>
+        <td>{{$message}}</td></tr>
+      @enderror
         <div class="form_item">
           <label for="email"></label>
-          <input type="email" name="email" placeholder="Email Address"></input>
+          <input type="email" name="email" placeholder="Email Address" value="{{old('email')}}"></input>
           <p>{{$error}}</p>
         </div>
+      @error('password')
+        <tr><th>ERROR</th>
+        <td>{{$message}}</td></tr>
+      @enderror
         <div class="form_item">
           <label for="password"></label>
           <input type="password" name="password"
           placeholder="Password"></input>
         </div>
+      @error('password_comform')
+        <tr><th>ERROR</th>
+        <td>{{$message}}</td></tr>
+      @enderror
         <div class="form_item">
           <label for="password_comform"></label>
           <input type="password" name="password_comform"
