@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     public function getRegister() {
-        return view('/auth/register');
+        return view('/auth/register', ['error'=>'']);
     }
     public function postRegister(Request $request) {
         // メールアドレスに重複がないか確認
