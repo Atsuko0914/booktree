@@ -3,7 +3,8 @@
 @section('login')
 <div class="top_login">
       <h1>BookTreeにログイン</h1>
-      <form>
+      <form action="/auth/login" method="POST">
+      @csrf
         <div class="form_item">
           <label for="email"></label>
           <input type="email" name="email" placeholder="Email Address"></input>

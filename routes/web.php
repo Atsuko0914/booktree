@@ -21,7 +21,7 @@ use App\Http\Controllers\LoginController;
 // "/"のルーティング
 Route::get('/', [LoginController::class, 'getLogin']);
 
-Route::post('/',[LoginController::class, 'postRegister']);
+Route::post('/auth/login',[LoginController::class, 'postLogin']);
 
 
 Route::get('/layouts', function () {

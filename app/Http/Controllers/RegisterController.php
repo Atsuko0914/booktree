@@ -7,21 +7,17 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 
+
 class RegisterController extends Controller
 {
     public function getRegister() {
-        return view('/auth/register', ['error'=>'']);
+        return view('/auth/register');
     }
-    public function postRegister(Request $request) {
-        // メールアドレスに重複がないか確認
 
+    public function postRegister(Request $request) {
         if(User::where('email', $request->input('email'))->first()){
-            return redirect('auth.register', ['error'=>'このメールアドレスは既に登録されています']);
-        }
-    //     if($this->user->where('email', '=', $request->input('email'))->get()){
-         
-    //   return redirect('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
-         else {
+            return redirect('/auth/register')->with('error','このメールアドレスは既に登録されています');
+        } else {
 
 
         // バリデーション
@@ -49,7 +45,7 @@ class RegisterController extends Controller
         $user->user_image_pass = $request->$fileName;
         $user->save();
 
-        return redirect('admin/post/index');
+        return redirect('/admin/post');
     }
     }
 
@@ -61,4 +57,4 @@ class RegisterController extends Controller
         //  ];
         
         
-}
+        }

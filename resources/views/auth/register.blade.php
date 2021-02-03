@@ -35,7 +35,7 @@
         <div class="form_item">
           <label for="email"></label>
           <input type="email" name="email" placeholder="Email Address" value="{{old('email')}}"></input>
-          <p>{{$error}}</p>
+          <p>{{session('error')}}</p>
         </div>
       @error('password')
         <tr><th>ERROR</th>
