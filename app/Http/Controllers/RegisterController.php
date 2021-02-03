@@ -12,11 +12,24 @@ class RegisterController extends Controller
         return view('/auth/register', ['error' => '']);
     }
     public function postRegister(Request $request) {
+
+        //$user =User::where('email',$request->email)->first();
+        //dd($user);
+
+        /*if(User::where('email',$request->email)->first()){
+            dd("stop1");
+        }else{
+            dd("stop2");
+        }*/
+
+
         // メールアドレスに重複がないか確認
         if($this->User->where('email', '=', $request->input('email')->get())){
+            dd("stop1");
          
       return redirect('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
         } else {
+            dd("stop2");
 
         
         // $emails = User::select('email')->get();
