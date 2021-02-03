@@ -16,10 +16,10 @@ class LoginController extends Controller
     public function postLogin(Request $request) {
         $this->validate($request,[
             'email' => 'email|requierd',
-            'password' => 'requierd|min4',
+            'password' => 'requierd|min3',
         ]);
-        if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]));
-        return redirect('post.index');
+        if(Auth::attempt(['email' => $request->input('email'), 'password' => Hash::check($request->input('password'))]));
+        return redirect('admin.post.index');
     }
 
 

@@ -6,25 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+
 class RegisterController extends Controller
 {
     public function getRegister() {
-        return view('/auth/register', ['error' => '']);
+        return view('/auth/register');
     }
     public function postRegister(Request $request) {
         // メールアドレスに重複がないか確認
-        if($this->User->where('email', '=', $request->input('email')->get())){
-         
-      return redirect('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
-        } else {
 
-        
-        // $emails = User::select('email')->get();
-        // foreach ($emails as $key => $email){
-        // if ($email === $request->email) {
-        // return view('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
-        //     } 
-        // }
+        if(User::where('email', $request->input('email'))->first()){
+            return redirect('auth.register', ['error'=>'このメールアドレスは既に登録されています']);
+        }
+    //     if($this->user->where('email', '=', $request->input('email'))->get()){
+         
+    //   return redirect('/auth/register', ['error'=>'このメールアドレスは既に登録されています']);
+         else {
+
+
         // バリデーション
         // $this->validate($request,[
         //     'name' => 'required',
