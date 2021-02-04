@@ -9,6 +9,7 @@ use Auth;
 
 
 
+
 class LoginController extends Controller
 {
     public function getLogin() {
@@ -19,16 +20,31 @@ class LoginController extends Controller
         //     'email' => 'email|requierd',
         //     'password' => 'requierd|min3',
         // ]);
-        if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-            return redirect('/admin/post');
-            }
-        // if(User::where('email', $request->input('email')->first())
-        // && User::where('password', Hash::check('password',$request->input('email')->first()))) {
-        //     return redirect('/admin/post');
-        // }
-            
+
+       $email[] = User::where('email',$request->input('email'))->first();
+       if(Hash::check($request->input('password'), $email[0]->password)) {
+        return redirect('/admin/post');
+       } else {
+        return view('/auth/login');
+       }
+
+
+
+
+
+
+
+
+           
         
-    }
+        
 
 
+
+        
+        
+    
+
+
+}
 }

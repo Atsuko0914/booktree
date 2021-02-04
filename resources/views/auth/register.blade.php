@@ -26,7 +26,7 @@
       @enderror
         <div class="form_item">
           <label for="name"></label>
-          <input type="name" name="name" placeholder="name" value="{{old('name')}}"></input>
+          <input type="text" name="name" placeholder="name" value="{{old('name')}}"></input>
         </div>
       @error('email')
         <tr><th>ERROR</th>

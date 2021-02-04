@@ -29,7 +29,7 @@ class RegisterController extends Controller
         //   ]);
 
         // 画像をアップロード
-        if ($file = $request->file('user_image_pass')) {
+        if ($file = $request->user_image_pass) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
             $file->move($target_path, $fileName);
@@ -42,19 +42,12 @@ class RegisterController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->user_image_pass = $request->$fileName;
+        $user->user_image_pass = $fileName;
         $user->save();
 
         return redirect('/admin/post');
     }
     }
-
-        // $data =[
-        //     'name' => $name,
-        //     'email' => $email,
-        //     'password' => $password,
-        //     'user_image_pass' => $user_image_pass,
-        //  ];
         
         
         }
