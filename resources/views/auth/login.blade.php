@@ -7,12 +7,13 @@
       @csrf
         <div class="form_item">
           <label for="email"></label>
-          <input type="email" name="email" placeholder="Email Address"></input>
+          <input type="email" name="email" placeholder="Email Address" value="{{old('email')}}"></input>
         </div>
         <div class="form_item">
           <label for="password"></label>
           <input type="password" name="password"
           placeholder="Password"></input>
+          <p>{{$error}}</p>
         </div>
         <div class="button_panel">
           <input type="submit" class="button" value="ログイン"></input>
