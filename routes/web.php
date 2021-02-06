@@ -23,6 +23,13 @@ Route::get('/', [LoginController::class, 'getLogin']);
 
 Route::post('/auth/login',[LoginController::class, 'postLogin']);
 
+Route::get('/auth/login',[LoginController::class, 'index']);
+
+Route::get('/auth/register',[RegisterController::class, 'getRegister']);
+
+Route::post('/auth/register',[RegisterController::class, 'postRegister']);
+
+
 
 Route::get('/layouts', function () {
     return view('layouts.app');
@@ -46,6 +53,3 @@ Route::get('/book/record', function () {
 });
 
 
-Route::get('/auth/register',[RegisterController::class, 'getRegister']);
-
-Route::post('/auth/register',[RegisterController::class, 'postRegister']);

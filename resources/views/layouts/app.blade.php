@@ -11,12 +11,15 @@
 <body>
 <header>
     <!-- サイトロゴ -->
-    <a href="/">BookTree</a>  
+    <a href="{{url('/')}}">BookTree</a>  
       <nav>
-        <a href="/admin/post">みんなの投稿</a>
-        <a href="/book">Mylibrary</a>
+        <a href="{{url('/admin/post')}}">みんなの投稿</a>
+        <a href="{{('/book')}}">Mylibrary</a>
       </nav>
-    <a href="/">ログアウト</a>
+      <p>ようこそ{{$user_name}}さん</p>
+    
+
+    <a href="{{url('/')}}">ログアウト</a>
   </header>
 
   @yield('content')

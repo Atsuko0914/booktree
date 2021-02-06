@@ -11,7 +11,7 @@
 <body>
 <!-- サイトロゴ -->
 <header>
-    <a href="">BookTree</a>  
+    <a href="{{url('/')}}">BookTree</a>  
 </header>
 <!-- ホーム画像 -->
   <div id="home">

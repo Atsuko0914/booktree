@@ -11,10 +11,10 @@
 <body>
 <header>
 <!-- サイトロゴ -->
-    <a href="">BookTree</a> 
+    <a href="{{url('/')}}">BookTree</a> 
 <!-- ナビゲーション -->
       <nav>
-        <a href="/auth/register">新規登録</a>
+        <a href="{{url('/auth/register')}}">新規登録</a>
         <a href="">ゲストログイン</a>
       </nav>
   </header>
