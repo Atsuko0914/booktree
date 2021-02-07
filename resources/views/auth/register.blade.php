@@ -6,7 +6,7 @@
   <title>@yield('title')</title>
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/register.css') }}" rel="stylesheet">
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/check.js') }}"></script>
 </head>
 <body>
 <!-- サイトロゴ -->
@@ -18,7 +18,7 @@
 <!-- 新規登録 -->
     <div class="new_login">
       <h1>新規登録</h1>
-      <form action="/auth/register" method="POST" enctype="multipart/form-data">
+      <form action="/auth/register" method="POST" enctype="multipart/form-data" name="contact">
       @csrf
       @error('name')
         <tr><th>ERROR</th>
@@ -60,7 +60,7 @@
           <input type="file" name="user_image_pass"></input>
         </div>
         <div class="button_panel">
-          <input type="submit" class="button" value="新規登録"></input>
+          <input type="submit" class="button" value="新規登録" onClick="return check();"></input>
         </div>
       </form>
     </div>

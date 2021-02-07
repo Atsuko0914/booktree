@@ -29,16 +29,17 @@ Route::get('/auth/register',[RegisterController::class, 'getRegister']);
 
 Route::post('/auth/register',[RegisterController::class, 'postRegister']);
 
-
-
 Route::get('/layouts', function () {
     return view('layouts.app');
 });
 
 
-Route::get('/admin/post', function () {
-    return view('admin.post.index');
-});
+//Route::get('/admin/post', function () {
+//    return view('admin.post.index');
+//});
+
+Route::get('/admin/post', [LoginController::class,'index']);
+
 
 Route::get('/show', function () {
     return view('admin.comment.show');

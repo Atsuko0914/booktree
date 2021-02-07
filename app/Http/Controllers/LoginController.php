@@ -30,10 +30,13 @@ class LoginController extends Controller
     //     }
     // }
 
-    if($email[] = User::where('email',$request->input('email'))->first()){
-        if(Hash::check($request->input('password'), $email[0]->password)) {
+    if($email = User::where('email',$request->input('email'))->first()){
+        if(Hash::check($request->input('password'), $email->password)) {
             $request->session()->put('email', $request->input('email'));
+            //$user_name =$email->name;
+            //dd($email->name);
             return redirect('/admin/post');
+            //return view('admin/post/index',compact('user_name'));
            
             
         
@@ -43,11 +46,13 @@ class LoginController extends Controller
     }
    }
   
-   public function index() {
+   public function index(Request $request) {
     $user_email = $request->session()->get('email');
-    $record_user[] = User::where('email', $user_email);
-    $user_name = $record_user[0]->name;
-    return view ('/layouts/app', compact('user_name'));
+    $record_user = User::where('email', $user_email)->first();  //51行目の書き方悪い。
+    //dd($record_user);
+    $user_name = $record_user->name;
+    //dd($user_name);
+    return view ('admin/post/index', compact('user_name'));
 }
 
    
