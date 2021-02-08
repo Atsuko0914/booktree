@@ -8,8 +8,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
-
-
 class LoginController extends Controller
 {
     public function getLogin() {
@@ -20,7 +18,7 @@ class LoginController extends Controller
 
     if($user = User::where('email',$request->input('email'))->first()){
         if(Hash::check($request->input('password'), $user->password)) {
-            // $request->session()->put('email', $request->input('email'));
+            $request->session()->put('email', $request->input('email'));
             $user_name = $user->name;
         
             return view('admin/post/index', compact('user_name'));

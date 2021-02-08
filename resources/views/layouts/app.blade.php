@@ -16,7 +16,9 @@
         <a href="{{url('/admin/post')}}">みんなの投稿</a>
         <a href="{{('/book')}}">Mylibrary</a>
       </nav>
+      @if(isset($user_name))
       <p>ようこそ{{$user_name}}さん</p>
+      @endif
     
 
     <a href="{{url('/')}}">ログアウト</a>

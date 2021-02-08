@@ -45,7 +45,9 @@ class RegisterController extends Controller
         $user->user_image_pass = $fileName;
         $user->save();
 
-        return redirect('/admin/post');
+        $user_name = $user->name;
+
+        return view('/admin/post/index', compact('user_name'));
     }
     }
         

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,12 @@ Route::get('/auth/register',[RegisterController::class, 'getRegister']);
 
 Route::post('/auth/register',[RegisterController::class, 'postRegister']);
 
+Route::get('/admin/post/index',[PostController::class, 'index']);
+
+Route::post('/admin/post/index',[PostController::class, 'post']);
+
+Route::get('/admin/post/index',[PostController::class, 'postShow']);
+
 
 
 Route::get('/layouts', function () {
@@ -35,9 +42,7 @@ Route::get('/layouts', function () {
 });
 
 
-Route::get('/admin/post', function () {
-    return view('admin.post.index');
-});
+
 
 Route::get('/show', function () {
     return view('admin.comment.show');
