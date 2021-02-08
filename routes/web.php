@@ -41,6 +41,10 @@ Route::get('/layouts', function () {
     return view('layouts.app');
 });
 
+Route::get('/admin/post', function () {
+    return view('admin.post.index');
+});
+
 
 
 

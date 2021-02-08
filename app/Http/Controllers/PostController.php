@@ -11,7 +11,7 @@ class PostController extends Controller
     public function index() {
         return view('/admin/post/index');
     }
-
+    
     public function post(Request $request) {
         if ($file = $request->post_image_pass) {
             $fileName = time() . $file->getClientOriginalName();
@@ -30,11 +30,13 @@ class PostController extends Controller
         $user_name = $user->name;
         return view('/admin/post/index', compact('user_name'));
     }
-
     public function postShow() {
         $items = Post::All();
-        return view('/admin/post/index', ['items' => $this->items]); 
+        dd($items);
+        return view('/admin/post/index', ['items' => $items]); 
     }
+
+    
 }
 
     
