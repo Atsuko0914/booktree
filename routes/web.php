@@ -23,7 +23,6 @@ Route::get('/', [LoginController::class, 'getLogin']);
 
 Route::post('/auth/login',[LoginController::class, 'postLogin']);
 
-Route::get('/auth/login',[LoginController::class, 'index']);
 
 Route::get('/auth/register',[RegisterController::class, 'getRegister']);
 
