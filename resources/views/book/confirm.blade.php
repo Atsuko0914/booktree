@@ -1,4 +1,4 @@
-<form action="/book/confirm" method="POST" enctype="multipart/form-data">
+<form action="/book/confirm" method="POST" enctype="multipart/form-data" name="recive">
 @csrf
 <h1>確認画面</h1>
 <p>タイトル</p>

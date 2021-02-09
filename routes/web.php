@@ -42,11 +42,13 @@ Route::get('/book/index', [BookController::class, 'index']
 Route::get('/book/record', [BookController::class, 'record']
 );
 
-Route::post('/book/record', [BookController::class, 'record']
+Route::post('/book/record', [BookController::class, 'postRecord']
 );
 
-Route::post('/book/confirm', [BookController::class, 'record']
+Route::post('/book/confirm', [BookController::class, 'postConfirm']
 );
+
+
 
 
 

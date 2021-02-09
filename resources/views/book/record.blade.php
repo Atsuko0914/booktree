@@ -12,7 +12,7 @@
 <img src="../images/my_library.JPG" alt="本棚の写真">
 </div>
 <!-- 登録内容 -->
-<form action="/book/confirm" method="POST" enctype="multipart/form-data">
+<form action="/book/record" method="POST" enctype="multipart/form-data">
 @csrf
   <div class="form_item">
     <label for="title">タイトル</label>
