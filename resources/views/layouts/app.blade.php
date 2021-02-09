@@ -13,8 +13,8 @@
     <!-- サイトロゴ -->
     <a href="{{url('/')}}">BookTree</a>  
       <nav>
-        <a href="{{url('/admin/post')}}">みんなの投稿</a>
-        <a href="{{url('/book')}}">Mylibrary</a>
+        <a href="{{url('/admin/post/index')}}">みんなの投稿</a>
+        <a href="{{url('/book/index')}}">Mylibrary</a>
       </nav>
       @if(isset($user_name))
       <p>ようこそ{{$user_name}}さん</p>

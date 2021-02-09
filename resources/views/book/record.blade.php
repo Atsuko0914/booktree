@@ -12,7 +12,8 @@
 <img src="../images/my_library.JPG" alt="本棚の写真">
 </div>
 <!-- 登録内容 -->
-<form>
+<form action="/book/confirm" method="POST" enctype="multipart/form-data">
+@csrf
   <div class="form_item">
     <label for="title">タイトル</label>
     <input type="text" name="title" id="title"></input>
@@ -55,7 +56,7 @@
     <input type="file" name="book_image_pass"></input>
   </div>
   <div class="button_panel">
-    <input type="submit" class="button" value="本を登録"></input>
+    <input type="submit" class="button" value="確認"></input>
   </div>
 </form>
 

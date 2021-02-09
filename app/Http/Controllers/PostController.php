@@ -32,7 +32,6 @@ class PostController extends Controller
     }
     public function postShow() {
         $items = Post::All();
-        dd($items);
         return view('/admin/post/index', ['items' => $items]); 
     }
 

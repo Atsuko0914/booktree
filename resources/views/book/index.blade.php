@@ -11,7 +11,7 @@
   <div class="mylibrary_main">
     <p class="my_library">MyLibrary</p>
     <!-- 新しい本ボタン -->
-    <a class="js-modal-open" href="/book/record">＋新しい本</a>
+    <a href="{{url('/book/record')}}">＋新しい本</a>
   </div>
   <!-- My検索 -->
   <div class="new_book">

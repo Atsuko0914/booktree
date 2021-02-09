@@ -17,15 +17,17 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('author');
-            $table->date('purchase_date');
-            $table->integer('price');
-            $table->string('publication');
-            $table->date('issue_date');
-            $table->text('keyword');
-            $table->string('book_image_pass');
-            $table->text('summary');
-            $table->integer('user_id');
+            $table->date('purchase_date')->nullable();
+            $table->integer('price')->nullable();
+            $table->string('publication')->nullable();
+            $table->date('issue_date')->nullable();
+            $table->text('keyword')->nullable();
+            $table->string('book_image_pass')->nullable();
+            $table->text('summary')->nullable();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

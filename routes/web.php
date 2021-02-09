@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,15 +36,30 @@ Route::post('/admin/post/index',[PostController::class, 'post']);
 
 Route::get('/admin/post/index',[PostController::class, 'postShow']);
 
+Route::get('/book/index', [BookController::class, 'index']
+);
+
+Route::get('/book/record', [BookController::class, 'record']
+);
+
+Route::post('/book/record', [BookController::class, 'record']
+);
+
+Route::post('/book/confirm', [BookController::class, 'record']
+);
+
+
+
+
 
 
 Route::get('/layouts', function () {
     return view('layouts.app');
 });
 
-Route::get('/admin/post', function () {
-    return view('admin.post.index');
-});
+// Route::get('/admin/post', function () {
+//     return view('admin.post.index');
+// });
 
 
 
@@ -52,12 +68,12 @@ Route::get('/show', function () {
     return view('admin.comment.show');
 });
 
-Route::get('/book', function () {
-    return view('book.index');
-});
+// Route::get('/book', function () {
+//     return view('book.index');
+// });
 
-Route::get('/book/record', function () {
-    return view('book.record');
-});
+// Route::get('/book/record', function () {
+//     return view('book.record');
+// });
 
 

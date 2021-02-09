@@ -24,8 +24,8 @@
 @if(isset($items))
 @foreach ($items as $item)
     <tr>
+      <img src="{{ asset('uploads/' . $item->post_image_pass) }}" alt="{{ $item->post_image_pass }}">
       <td>{{$item->post_body}}</td>
-      <td>{{$item->post_image_pass}}</td>
       <td>{{$item->updated_at}}</td>
     </tr>
   @endforeach
